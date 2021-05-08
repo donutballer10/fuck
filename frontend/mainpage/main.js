@@ -66,7 +66,7 @@ socket.on("login_mainpage", (logged_in) => {
 	console.log(logged_in);
 	for (i = 0; i < logged_in.length; i++) {
 		var user_info = logged_in[i];
-		var img_path = "http://localhost:80/backend/images/" + user_info["img"] + ".jpg"
+		var img_path = "http://cse312-03.dcsl.buffalo.edu/backend/images/" + user_info["img"] + ".jpg"
         //var img_path = "http://localhost:80/" + user_info["img"] + ".jpg"
 		console.log("img_path: " + String(img_path));
 		AddUser(user_info["username"], img_path);

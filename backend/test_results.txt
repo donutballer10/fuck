@@ -1,0 +1,94 @@
+
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | user trying to log in
+server.js_1  | login():
+server.js_1  | {
+server.js_1  |   _id: 60935f1c19de73000ac2816c,
+server.js_1  |   username: 'R%rqF#c<,DWz9:8$',
+server.js_1  |   password: '$2b$12$0JZqTgPsiuhMRDn8ICcn3eVPQQPs7s57OlTcm7ZdOcN7gu.3E7pHG',
+server.js_1  |   salt: '$2b$12$0JZqTgPsiuhMRDn8ICcn3e',
+server.js_1  |   path: 0
+server.js_1  | }
+server.js_1  | login status: 0
+server.js_1  | path in login event:start
+server.js_1  | 0
+server.js_1  | path in login event:end
+server.js_1  | logged_in:start
+server.js_1  | [ { username: 'R%rqF#c<,DWz9:8$', img: 0 } ]
+server.js_1  | logged_in:end
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event
+server.js_1  | user connected
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | user trying to register
+server.js_1  | filename: 1
+server.js_1  | salt: $2b$12$w.iKJjH2UZEMRxNzljXGIO
+server.js_1  | hash: $2b$12$w.iKJjH2UZEMRxNzljXGIObgTl1LjYUdyRt86/rYuhRZbij7Wjta6
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | user trying to log in
+server.js_1  | login():
+server.js_1  | {
+server.js_1  |   _id: 60935f4a19de73000ac2816d,
+server.js_1  |   username: 'eRt56)c-,C*{qAKp',
+server.js_1  |   password: '$2b$12$w.iKJjH2UZEMRxNzljXGIObgTl1LjYUdyRt86/rYuhRZbij7Wjta6',
+server.js_1  |   salt: '$2b$12$w.iKJjH2UZEMRxNzljXGIO',
+server.js_1  |   path: 1
+server.js_1  | }
+server.js_1  | login status: 0
+server.js_1  | path in login event:start
+server.js_1  | 1
+server.js_1  | path in login event:end
+server.js_1  | logged_in:start
+server.js_1  | [
+server.js_1  |   { username: 'R%rqF#c<,DWz9:8$', img: 0 },
+server.js_1  |   { username: 'eRt56)c-,C*{qAKp', img: 1 }
+server.js_1  | ]
+server.js_1  | logged_in:end
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event
+server.js_1  | user connected
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | user trying to register
+server.js_1  | filename: 2
+server.js_1  | salt: $2b$12$pEyUobhIDSunLG8fB4Nh.u
+server.js_1  | hash: $2b$12$pEyUobhIDSunLG8fB4Nh.uedIwyHfJc0Hnq5VxSPcc6v0a5vDrVOO
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | user trying to log in
+server.js_1  | login():
+server.js_1  | {
+server.js_1  |   _id: 60935f7619de73000ac2816e,
+server.js_1  |   username: 'U<z3zM&`meH/TP2k',
+server.js_1  |   password: '$2b$12$pEyUobhIDSunLG8fB4Nh.uedIwyHfJc0Hnq5VxSPcc6v0a5vDrVOO',
+server.js_1  |   salt: '$2b$12$pEyUobhIDSunLG8fB4Nh.u',
+server.js_1  |   path: 2
+server.js_1  | }
+server.js_1  | login status: 0
+server.js_1  | path in login event:start
+server.js_1  | 2
+server.js_1  | path in login event:end
+server.js_1  | logged_in:start
+server.js_1  | [
+server.js_1  |   { username: 'R%rqF#c<,DWz9:8$', img: 0 },
+server.js_1  |   { username: 'eRt56)c-,C*{qAKp', img: 1 },
+server.js_1  |   { username: 'U<z3zM&`meH/TP2k', img: 2 }
+server.js_1  | ]
+server.js_1  | logged_in:end
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event
+server.js_1  | a user disconnected
+server.js_1  | user connected
+server.js_1  | login_mainpage event

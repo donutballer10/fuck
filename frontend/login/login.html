@@ -1,0 +1,30 @@
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body> <div class="container">
+        <h1>Login</h1>
+
+        <label id="username_label">User Name: </label><br>
+        <input type="text" value="" id="username"><br>
+
+        <label id="password_label">Password: </label><br>
+        <input type="password" id="password"><br><br>
+
+        <input type="button" value="Login" onclick="btn_login_click()"><br>
+    </div>
+
+	<script src = "/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+	</script>
+	<script src = "login.js"></script>
+
+</body>
+
+</html>

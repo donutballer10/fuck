@@ -1,0 +1,129 @@
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Message</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="preload.js"></script>
+</head>
+
+<body onresize="onResize()">
+    <div id = "username"></div>
+     <div id="chatwindow" class="chatwindow">
+
+        <div class="chatbarContainer">
+            <p id="current_user" style="text-align: center; background-color: rgb(83, 102, 211);"></p>
+            <div id="chatbar" class="chatbar"></div>
+        </div>
+
+        <div class="user_list_container">
+            <p style="text-align: center; background-color: rgb(83, 102, 211);">
+                Online
+            </p>
+            <div class="user_list_div">
+                <dl id="user_list">
+                </dl>
+            </div>
+        </div>
+
+        <div class="sendbox">
+            <br>
+            <input id="textbox" class="textbox">
+            <br>
+            <button onclick="send_btn_click()" style=" clear: both;background-color: cyan;">Send Message</button>
+            <button onclick="clear_btn_click()" style="clear:both; background-color: rgb(255, 165, 165);">Clear
+                History</button>
+            <button onclick="showChatWindow(false)" style="float: right;">Hide Chat Window</button>
+        </div>
+    </div>
+
+    <button onclick="showChatWindow(true)" id="showbutton"
+        style="position: fixed;bottom: 40px; right:10px; font-size: 20px;background-color:darkcyan;color: white;">Show
+        Chat
+        Window</button>
+
+    <button onclick="logout_btn_click(test)"
+        style="position: fixed;bottom: 5px; right:10px; font-size: 20px;background-color:rgb(245, 4, 4);color: white;">
+        Logout
+    </button>
+
+     <script src = "/socket.io/socket.io.js"></script>
+     <script>
+         var socket = io();
+         var test;
+         function checkCookie(){
+             let y;
+             let tracker = false;
+             const cookieValue = document.cookie.split('; ');
+             for(y = 0; y < cookieValue.length; y++){
+                 if(cookieValue[y].startsWith("clientname=")){
+                     tracker = true;
+                 }
+             }
+             if(tracker == false){
+                 return false;
+             }else{
+                 for(y = 0; y < cookieValue.length; y++) {
+                     if (cookieValue[y].startsWith("clientname=")) {
+                         if (cookieValue[y].split('=')[1] == '') {
+                             return false;
+                         } else {
+                             displayUsername(cookieValue[y].split('=')[1]);
+                             return true;
+                         }
+                     }
+                 }
+             }
+         }
+
+         //when disconnect set cookie to empty
+         const s = checkCookie();
+         if(s == false){
+             socket.emit("clientUsername");
+             socket.on("clientUsername", (username) => {
+                 document.cookie = "clientname="+username+"; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/frontend/mainpage";
+                 displayUsername(username);
+             });
+         }
+
+         socket.on('chat_message', function(username, msg) {
+             const cookieValue = document.cookie.split('; ').find(row => row.startsWith('clientname=')).split('=')[1];
+             if(cookieValue == username){
+                 AddMessage(username, msg);
+             }
+         });
+
+         function displayUsername(clientname){
+             document.getElementById("username").innerHTML = "Hello user: "+clientname;
+             test = clientname;
+             socket.emit("history", test);
+         }
+
+         socket.on("display", (status)=>{
+             var div = document.getElementById("chatwindow");
+             var btn = document.getElementById("showbutton");
+
+             if (status) {
+                 onResize();
+                 var btn = document.getElementById("showbutton");
+                 btn.textContent = "Show Chat Window";
+                 div.style.display = "block";
+                 btn.style.display = "none";
+             } else {
+                 div.style.display = "none";
+                 btn.style.display = "block";
+             }
+         });
+
+
+
+     </script>
+    <script src="main.js"></script>
+
+
+
+
+</body>
+
+</html>

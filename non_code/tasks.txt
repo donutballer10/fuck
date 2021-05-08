@@ -1,0 +1,22 @@
+# format for this doc
+# larger task:
+# - smaller tasks
+# indent to indicate further subness
+
+overall idea:
+- chat app with user accounts
+	- live interaction that's not text is likes counter on each message
+	- multimedia content is a profile pic
+	- notification and private dm page
+- so 3-4 pages: main chat page, login and create account, private dm page
+- use socket io for server
+
+notes:
+- Basically what u need to do is: 1. When client send a message, OnSend() will be triggered, and when this is triggered, client send something to the server, so the server knows and relay to the specific client.       2. When a client receive a message/ command from server, parse it and get the message and get the name  who is sending this message then call AssMessage(_username, _msg), then u dont need to worry about the frontend anymore, this method will do the rest for you
+other methods will works the same way
+
+database:
+-i will be sending the data to the database in JSON, so you'll have to decode that or whatever
+or maybe not JSON if you or i figure out a better way, ive been thinking about this for 5 minutes
+
+
